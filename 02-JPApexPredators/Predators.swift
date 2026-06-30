@@ -28,4 +28,24 @@ class Predators {
             }
         }
     }
+    
+    func search(for searchQuery: String) -> [ApexPredatorModel] {
+        if searchQuery.isEmpty {
+            return allPredators
+        } else {
+            return allPredators.filter { predator in
+                predator.name.localizedCaseInsensitiveContains(searchQuery)
+            }
+        }
+    }
+    
+    func sort(by isAlphabetical: Bool) {
+        allPredators.sort { predator1, predator2 in
+            if isAlphabetical {
+                predator1.name < predator2.name
+            } else {
+                predator1.id < predator2.id
+            }
+        }
+    }
 }

@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct PredatorDetailsView: View {
-    let dino: ApexPredatorModel
+    let predator: ApexPredatorModel
     
     var body: some View {
-        Image(dino.image)
+        Image(predator.image)
             .resizable()
             .scaledToFit()
     }
 }
 
 #Preview {
-    PredatorDetailsView(dino: Predators().allPredators[0])
+    PredatorDetailsView(predator: Predators().allPredators[0])
 }
